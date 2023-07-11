@@ -18,6 +18,11 @@ public class MainController {
 
 
 
+    Scanner scannerHistoric;
+
+    {
+        scannerHistoric = new Scanner(fileHistoric);
+    }
 
       public String importFromFile1(String fileHistoric)
             throws FileNotFoundException
@@ -35,12 +40,14 @@ public class MainController {
     }
 
      Scanner scannerRomantic;
-    { scannerRomantic= new Scanner(fileRomantic);}
+    {
+         scannerRomantic= new Scanner(fileRomantic);
+    }
 
     public String importFromFile2(String fileRomantic)
             throws FileNotFoundException
-    {String text= "romantic";
-        try (Scanner scannerRomantic=new Scanner(new BufferedReader(new FileReader(fileRomantic)))){
+    {String text="romantic";
+        try (Scanner scannerRomantic= new Scanner(new BufferedReader(new FileReader(fileRomantic)))){
             while(scannerRomantic.hasNextLine());
             {
                 text=scannerRomantic.nextLine();
@@ -57,7 +64,7 @@ public class MainController {
     public String importFromFile3(String fileScifi)
             throws FileNotFoundException
     {String text ="scifi";
-        try (Scanner scannerScifi = new Scanner(new BufferedReader(new FileReader(fileHistoric)))) {
+        try (Scanner scannerScifi = new Scanner(new BufferedReader(new FileReader(fileScifi)))) {
             while(scannerScifi.hasNextLine())
 
             {
@@ -71,12 +78,6 @@ public class MainController {
     public MainController() throws FileNotFoundException {
     }
 
-
-    Scanner scannerHistoric;
-
-    {
-        scannerHistoric = new Scanner(fileHistoric);
-    }
 
     @GetMapping("/historic")
     public String scannerHistoric() throws FileNotFoundException {
