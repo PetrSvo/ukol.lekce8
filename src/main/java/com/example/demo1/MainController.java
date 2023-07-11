@@ -3,6 +3,7 @@ package com.example.demo1;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,11 +13,11 @@ import java.util.Scanner;
 public class MainController {
 
 
-    File fileHistoric = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\historic.txt");
+   // File fileHistoric = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\historic.txt");
     File fileRomantic = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\romantic.txt");
     File fileScifi = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\scifi.txt");
 
-
+    File fileHistoric =new File("C:\\Users\\svobp\\Desktop\\Open JDK\\moje soubory y programovani\\demo1\\src\\ukol\\historic.txt");
 
     Scanner scannerHistoric;
 
@@ -44,19 +45,21 @@ public class MainController {
          scannerRomantic= new Scanner(fileRomantic);
     }
 
+
     public String importFromFile2(String fileRomantic)
             throws FileNotFoundException
-    {String text="romantic";
-        try (Scanner scannerRomantic= new Scanner(new BufferedReader(new FileReader(fileRomantic)))){
-            while(scannerRomantic.hasNextLine());
-            {
-                text=scannerRomantic.nextLine();
-            }
-        }catch(FileNotFoundException e){
-            throw new FileNotFoundException("Nepodařilo se najít soubor"+fileRomantic);
-        }return text;
-    }
+    {String text ="romantic";
+        try (Scanner scannerRomantic = new Scanner(new BufferedReader(new FileReader(fileRomantic)))) {
+            while(scannerRomantic.hasNextLine())
 
+            {
+                text = scannerRomantic.nextLine();
+            }
+        } catch(FileNotFoundException e){
+            throw new FileNotFoundException("Nepodarilo se nalést soubor" + fileRomantic);
+        }
+        return text;
+    }
 
     Scanner scannerScifi;{
        scannerScifi =new Scanner(fileScifi);}
