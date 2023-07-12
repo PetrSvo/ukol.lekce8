@@ -13,17 +13,9 @@ import java.util.Scanner;
 public class MainController {
 
 
-   // File fileHistoric = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\historic.txt");
-    File fileRomantic = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\romantic.txt");
-    File fileScifi = new File("C:\\Users\\svobp\\Desktop\\Open JDK\\ukol lekce 8\\scifi.txt");
-
-    File fileHistoric =new File("C:\\Users\\svobp\\Desktop\\Open JDK\\moje soubory y programovani\\demo1\\src\\ukol\\historic.txt");
-
-    Scanner scannerHistoric;
-
-    {
-        scannerHistoric = new Scanner(fileHistoric);
-    }
+   return importFromFile1("src/ukol/historic.txt");
+   return importFromFile2("src/ukol/romantic.txt");
+   return importFromFile3("src/ukol/scifi.txt");
 
       public String importFromFile1(String fileHistoric)
             throws FileNotFoundException
@@ -40,10 +32,8 @@ public class MainController {
         return text;
     }
 
-     Scanner scannerRomantic;
-    {
-         scannerRomantic= new Scanner(fileRomantic);
-    }
+
+
 
 
     public String importFromFile2(String fileRomantic)
@@ -61,8 +51,7 @@ public class MainController {
         return text;
     }
 
-    Scanner scannerScifi;{
-       scannerScifi =new Scanner(fileScifi);}
+
 
     public String importFromFile3(String fileScifi)
             throws FileNotFoundException
